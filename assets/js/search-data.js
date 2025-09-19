@@ -23,8 +23,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-early-research",
-          title: "Early Research",
+        },{id: "nav-earlyresearch",
+          title: "earlyResearch",
           description: "A collection of early research works (IB Extended Essay, IB Math IA, simple literature review, etc.)",
           section: "Navigation",
           handler: () => {
