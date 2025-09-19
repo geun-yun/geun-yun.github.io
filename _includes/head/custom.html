@@ -1,35 +1,73 @@
-<!-- Dynamic favicon for light/dark -->
-<link id="dynamic-favicon" rel="icon" type="image/png"
-      href="{{ '/assets/img/favicon-light.png?v=1' | relative_url }}">
-
-<!-- Let browsers pick pre-JS based on system theme -->
-<link rel="icon" type="image/png"
-      href="{{ '/assets/img/favicon-light.png?v=1' | relative_url }}"
-      media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png"
-      href="{{ '/assets/img/favicon-dark.png?v=1'  | relative_url }}"
-      media="(prefers-color-scheme: dark)">
-
+<!-- Dynamic favicon for light/dark (robust) -->
 <script>
 (function () {
-  const lightHref = "{{ '/assets/img/favicon-light.png?v=1' | relative_url }}";
-  const darkHref  = "{{ '/assets/img/favicon-dark.png?v=1'  | relative_url }}";
-  const link = document.querySelector('#dynamic-favicon');
+  // Update these if you move the files; bump ?v=3 to bust cache
+  const LIGHT = "{{ '/assets/img/favicon-light.png?v=3' | relative_url }}";
+  const DARK  = "{{ '/assets/img/favicon-dark.png?v=3'  | relative_url }}";
+
   const mql = window.matchMedia('(prefers-color-scheme: dark)');
 
-  function isDark() {
-    const stored = localStorage.getItem('theme');       // al-folio stores 'light' | 'dark'
+  function themeIsDark() {
+    // 1) explicit manual choice saved by al-folio
+    const stored = localStorage.getItem('theme'); // 'dark' | 'light' | null
     if (stored === 'dark') return true;
     if (stored === 'light') return false;
-    return mql.matches;                                  // fallback to system
+
+    // 2) attribute/class the theme sets on <html>
+    const el = document.documentElement;
+    const attr = el.getAttribute('data-theme');
+    if (attr === 'dark') return true;
+    if (attr === 'light') return false;
+    if (el.classList.contains('dark')) return true;
+    if (el.classList.contains('light')) return false;
+
+    // 3) fallback: system
+    return mql.matches;
   }
 
-  function apply() { link.href = isDark() ? darkHref : lightHref; }
-  apply();
+  function removeExistingIcons() {
+    document.querySelectorAll('link[rel*="icon"]').forEach(n => n.parentNode.removeChild(n));
+  }
 
-  mql.addEventListener?.('change', apply);
-  new MutationObserver(apply)
-    .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme','class'] });
-  window.addEventListener('storage', e => { if (e.key === 'theme') apply(); });
+  function injectIcon(href) {
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/png';
+    link.href = href;
+    // put it LAST in <head> so it wins over anything the theme adds
+    document.head.appendChild(link);
+
+    // (Optional) also add a 'shortcut icon' for older browsers
+    const shortcut = document.createElement('link');
+    shortcut.rel = 'shortcut icon';
+    shortcut.type = 'image/png';
+    shortcut.href = href;
+    document.head.appendChild(shortcut);
+  }
+
+  function applyFavicon() {
+    removeExistingIcons();
+    injectIcon(themeIsDark() ? DARK : LIGHT);
+  }
+
+  function init() {
+    applyFavicon();
+
+    // react to system scheme change
+    mql.addEventListener?.('change', applyFavicon);
+
+    // react to manual toggle (al-folio flips attributes / localStorage)
+    new MutationObserver(applyFavicon)
+      .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme','class'] });
+
+    window.addEventListener('storage', e => { if (e.key === 'theme') applyFavicon(); });
+  }
+
+  // Run after DOM is ready so we can safely remove/append in <head>
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 </script>
