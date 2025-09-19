@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://comp.anu.edu.au/'>Australian National University</a>. Contacts: geun.yun@anu.edu.au.
+subtitle: <a href='https://comp.anu.edu.au/'>Australian National University</a>, geun.yun@anu.edu.au
 
 profile:
   align: right
