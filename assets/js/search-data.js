@@ -445,8 +445,8 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+            },},{id: "news-i-have-finally-submitted-my-honours-thesis-shield-framework",
+          title: 'I have finally submitted my Honours thesis (SHIELD framework)!',
           description: "",
           section: "News",},{id: "news-i-am-officially-graduated-from-australian-national-university-with-bachelor-of-advanced-computing-research-and-development-honours",
           title: 'I am officially graduated from Australian National University with Bachelor of Advanced Computing...',
