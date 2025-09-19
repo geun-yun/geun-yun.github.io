@@ -32,7 +32,7 @@
               {%- if venue.color != blank -%}
                 {%- assign venue_style = 'style="background-color:' | append: venue.color | append: '"' -%}
               {%- endif -%}
-              <abbr class="badge rounded w-100 mb-1" {{ venue_style }}>
+              <abbr class="badge rounded w-100 mb-1 me-1" {{ venue_style }}>
                 {% if venue.url %}
                   <a href="{{ venue.url }}">{{ ab_trim }}</a>
                 {% else %}
