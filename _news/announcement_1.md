@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I am officially graduated from Australian National University with [Bachelor of Advanced Computing (Research and Development) (Honours)](https://programsandcourses.anu.edu.au/program/aacrd)!
+I am officially graduated from ANU with [Bachelor of Advanced Computing (Research and Development) (Honours)](https://programsandcourses.anu.edu.au/program/aacrd)!
