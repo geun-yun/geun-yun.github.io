@@ -23,13 +23,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-earlyresearch",
-          title: "earlyResearch",
-          description: "A collection of early research works (IB Extended Essay, IB Math IA, simple literature review, etc.)",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/early-research/";
-          },
         },{id: "nav-repositories",
           title: "repositories",
           description: "Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.",
@@ -50,6 +43,13 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
+          },
+        },{id: "nav-earlyresearch",
+          title: "earlyResearch",
+          description: "A collection of early research works (IB Extended Essay, IB Math IA, simple literature review, etc.)",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/early-research/";
           },
         },{id: "nav-people",
           title: "people",
