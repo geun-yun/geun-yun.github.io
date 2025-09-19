@@ -13,3 +13,12 @@
 
 "Logic":
   color: "#CC7722"
+
+"Machine Learning":
+  color: "#02CCFE"
+
+"Explainable AI":
+  color: "#8806CE"
+
+"Health Informatics":
+  color: "#0B6623"
