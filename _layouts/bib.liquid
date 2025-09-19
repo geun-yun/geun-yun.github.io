@@ -4,30 +4,49 @@
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
       {%- if entry.abbr -%}
-        {%- if site.data.venues[entry.abbr] -%}
-          {% assign venue_style = null %}
-          {% if site.data.venues[entry.abbr].color != blank %}
-            {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
-          {%- endif -%}
-          <abbr
-            class="badge rounded w-100"
-            {% if venue_style %}
-              {{ venue_style }}
-            {% endif -%}
-          >
-            {% if site.data.venues[entry.abbr].url %}
-              <a href="{{ site.data.venues[entry.abbr].url }}">{{ entry.abbr }}</a>
-            {% else %}
-              <div>{{- entry.abbr -}}</div>
-            {% endif %}
-          </abbr>
+        {%- comment -%}
+        Normalize abbr(s):
+        - If entry.abbr is already an array (YAML list), use it directly.
+        - Otherwise, split a string by | , / ; and trim.
+        {%- endcomment -%}
+        {% assign _abbrs = entry.abbr %}
+        {% if _abbrs.first %}
+          {%- assign abbr_list = _abbrs -%} {# array case #}
         {% else %}
-          <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
+          {%- assign abbr_str = _abbrs
+              | replace: ';', '|'
+              | replace: ',', '|'
+              | replace: '/', '|'
+            -%}
+          {%- assign abbr_list = abbr_str | split: '|' -%}
         {% endif %}
-      {% endif %}
+  
+        {%- for ab in abbr_list -%}
+          {%- assign ab_trim = ab | strip -%}
+          {%- if ab_trim != '' -%}
+            {%- if site.data.venues[ab_trim] -%}
+              {% assign venue_style = null %}
+              {% if site.data.venues[ab_trim].color != blank %}
+                {% assign venue_style = site.data.venues[ab_trim].color | prepend: 'style="background-color:' | append: '"' %}
+              {% endif %}
+              <abbr class="badge rounded w-100 mb-1"
+                {% if venue_style %}{{ venue_style }}{% endif %}>
+                {% if site.data.venues[ab_trim].url %}
+                  <a href="{{ site.data.venues[ab_trim].url }}">{{ ab_trim }}</a>
+                {% else %}
+                  <div>{{- ab_trim -}}</div>
+                {% endif %}
+              </abbr>
+            {%- else -%}
+              <abbr class="badge rounded w-100 mb-1">{{ ab_trim }}</abbr>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+  
       {% if entry.preview %}
         {% if entry.preview contains '://' %}
-          <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
+          <img class="preview z-depth-1 rounded mt-1" src="{{ entry.preview }}">
         {% else %}
           {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
           {%
@@ -35,7 +54,7 @@
             loading="eager"
             path=entry_path
             sizes = "200px"
-            class="preview z-depth-1 rounded"
+            class="preview z-depth-1 rounded mt-1"
             zoomable=true
             avoid_scaling=true
             alt=entry.preview
