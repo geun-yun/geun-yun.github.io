@@ -1,11 +1,11 @@
 ---
 layout: page
-title: projects
-permalink: /projects/
-description: A growing collection of your cool projects.
+title: Early Research
+permalink: /early-research/
+description: A collection of early research works (IB Extended Essay, IB Math IA, simple literature review, etc.)
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [Undergraduate, International Baccalaureate]
 horizontal: false
 ---
 
