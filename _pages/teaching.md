@@ -7,6 +7,7 @@ nav: true
 nav_order: 6
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
-
-Organize your courses by years, topics, or universities, however you like!
+## Teaching Assistant (TA):
+2025 Semester 2: <a href="https://programsandcourses.anu.edu.au/course/comp3670">COMP3670 - Introduction to Machine Learning</a>\
+2024 Semester 2: <a href="https://programsandcourses.anu.edu.au/course/comp1600">COMP1600 - Foundations of Computing</a>\
+2023 Semester 2: <a href="https://programsandcourses.anu.edu.au/course/comp1600">COMP1600 - Foundations of Computing</a>
