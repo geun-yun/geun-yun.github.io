@@ -23,12 +23,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-projects",
-          title: "projects",
-          description: "A growing collection of your cool projects.",
+        },{id: "nav-early-research",
+          title: "Early Research",
+          description: "A collection of early research works (IB Extended Essay, IB Math IA, simple literature review, etc.)",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/projects/";
+            window.location.href = "/early-research/";
           },
         },{id: "nav-repositories",
           title: "repositories",
