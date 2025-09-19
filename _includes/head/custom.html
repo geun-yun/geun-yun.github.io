@@ -1,0 +1,35 @@
+<!-- Dynamic favicon for light/dark -->
+<link id="dynamic-favicon" rel="icon" type="image/png"
+      href="{{ '/assets/img/favicon-light.png?v=1' | relative_url }}">
+
+<!-- Let browsers pick pre-JS based on system theme -->
+<link rel="icon" type="image/png"
+      href="{{ '/assets/img/favicon-light.png?v=1' | relative_url }}"
+      media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png"
+      href="{{ '/assets/img/favicon-dark.png?v=1'  | relative_url }}"
+      media="(prefers-color-scheme: dark)">
+
+<script>
+(function () {
+  const lightHref = "{{ '/assets/img/favicon-light.png?v=1' | relative_url }}";
+  const darkHref  = "{{ '/assets/img/favicon-dark.png?v=1'  | relative_url }}";
+  const link = document.querySelector('#dynamic-favicon');
+  const mql = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function isDark() {
+    const stored = localStorage.getItem('theme');       // al-folio stores 'light' | 'dark'
+    if (stored === 'dark') return true;
+    if (stored === 'light') return false;
+    return mql.matches;                                  // fallback to system
+  }
+
+  function apply() { link.href = isDark() ? darkHref : lightHref; }
+  apply();
+
+  mql.addEventListener?.('change', apply);
+  new MutationObserver(apply)
+    .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme','class'] });
+  window.addEventListener('storage', e => { if (e.key === 'theme') apply(); });
+})();
+</script>
