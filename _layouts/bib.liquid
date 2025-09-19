@@ -11,7 +11,7 @@
         {%- endcomment -%}
         {% assign _abbrs = entry.abbr %}
         {% if _abbrs.first %}
-          {%- assign abbr_list = _abbrs -%} {# array case #}
+          {%- assign abbr_list = _abbrs -%} {% comment %} array case {% endcomment %}
         {% else %}
           {%- assign abbr_str = _abbrs
               | replace: ';', '|'
