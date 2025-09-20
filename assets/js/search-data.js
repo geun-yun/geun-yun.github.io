@@ -24,14 +24,14 @@ ninja.data = [{
             window.location.href = "/repositories/";
           },
         },{id: "nav-teaching",
-          title: "teaching",
+          title: "Teaching",
           description: "This page lists only public teaching experience, excluding private tutoring.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "nav-earlyresearch",
-          title: "EarlyResearch",
+        },{id: "nav-early-research",
+          title: "Early research",
           description: "A collection of early research works (IB Extended Essay, IB Math IA, simple literature review, etc.)",
           section: "Navigation",
           handler: () => {
