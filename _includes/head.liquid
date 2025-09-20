@@ -70,18 +70,6 @@
       href="{{ '/assets/img/favicon-dark.png'  | relative_url | bust_file_cache }}"
       media="(prefers-color-scheme: dark)">
 
-{%- comment -%} Optional: live-switch the favicon if theme changes without reload {%- endcomment -%}
-<script>
-(function () {
-  const lightHref = "{{ '/assets/img/favicon-light.png' | relative_url | bust_file_cache }}";
-  const darkHref  = "{{ '/assets/img/favicon-dark.png'  | relative_url | bust_file_cache }}";
-  const link = document.querySelector('#dynamic-favicon');
-  const mql = window.matchMedia('(prefers-color-scheme: dark)');
-  function update() { link.href = mql.matches ? darkHref : lightHref; }
-  update();
-  (mql.addEventListener ? mql.addEventListener('change', update) : mql.addListener(update));
-})();
-</script>
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
@@ -97,6 +85,37 @@
   >
   <script>
     initTheme();
+
+    // Live favicon switcher (works with both system + al-folio toggle)
+    (function () {
+      const lightHref = "{{ '/assets/img/favicon-light.png' | relative_url | bust_file_cache }}";
+      const darkHref  = "{{ '/assets/img/favicon-dark.png'  | relative_url | bust_file_cache }}";
+      const link = document.querySelector('#dynamic-favicon');
+      const mql = window.matchMedia('(prefers-color-scheme: dark)');
+
+      function isDark() {
+        const attr = document.documentElement.getAttribute('data-theme');
+        if (attr === 'dark') return true;
+        if (attr === 'light') return false;
+        return mql.matches; // fallback
+      }
+
+      function update() {
+        if (!link) return;
+        link.href = isDark() ? darkHref : lightHref;
+      }
+
+      // Initial
+      update();
+
+      // Listen to system changes
+      if (mql.addEventListener) mql.addEventListener('change', update);
+      else mql.addListener(update);
+
+      // Listen to theme toggler
+      const mo = new MutationObserver(update);
+      mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    })();
   </script>
 {% endif %}
 
@@ -140,63 +159,39 @@
 
 {% if page.images %}
   {% if page.images.compare %}
-    <!-- Image comparison slider -->
-    <link
-      defer
-      rel="stylesheet"
-      href="{{ site.third_party_libraries.img-comparison-slider.url.css }}"
-      integrity="{{ site.third_party_libraries.img-comparison-slider.integrity.css }}"
-      crossorigin="anonymous"
-    >
+    <link defer rel="stylesheet"
+          href="{{ site.third_party_libraries.img-comparison-slider.url.css }}"
+          integrity="{{ site.third_party_libraries.img-comparison-slider.integrity.css }}"
+          crossorigin="anonymous">
   {% endif %}
   {% if page.images.lightbox2 %}
-    <!-- Lightbox2 -->
-    <link
-      defer
-      rel="stylesheet"
-      href="{{ site.third_party_libraries.lightbox2.url.css }}"
-      integrity="{{ site.third_party_libraries.lightbox2.integrity.css }}"
-      crossorigin="anonymous"
-    >
+    <link defer rel="stylesheet"
+          href="{{ site.third_party_libraries.lightbox2.url.css }}"
+          integrity="{{ site.third_party_libraries.lightbox2.integrity.css }}"
+          crossorigin="anonymous">
   {% endif %}
   {% if page.images.photoswipe %}
-    <!-- Photoswipe -->
-    <link
-      defer
-      rel="stylesheet"
-      href="{{ site.third_party_libraries.photoswipe.url.css }}"
-      crossorigin="anonymous"
-    >
+    <link defer rel="stylesheet"
+          href="{{ site.third_party_libraries.photoswipe.url.css }}"
+          crossorigin="anonymous">
   {% endif %}
   {% if page.images.slider %}
-    <!-- Image slider -->
-    <link
-      defer
-      rel="stylesheet"
-      href="{{ site.third_party_libraries.swiper.url.css }}"
-      integrity="{{ site.third_party_libraries.swiper.integrity.css }}"
-      crossorigin="anonymous"
-    >
+    <link defer rel="stylesheet"
+          href="{{ site.third_party_libraries.swiper.url.css }}"
+          integrity="{{ site.third_party_libraries.swiper.integrity.css }}"
+          crossorigin="anonymous">
   {% endif %}
   {% if page.images.spotlight %}
-    <!-- Spotlight -->
-    <link
-      defer
-      rel="stylesheet"
-      href="{{ site.third_party_libraries.spotlight.url.css }}"
-      integrity="{{ site.third_party_libraries.spotlight.integrity.css }}"
-      crossorigin="anonymous"
-    >
+    <link defer rel="stylesheet"
+          href="{{ site.third_party_libraries.spotlight.url.css }}"
+          integrity="{{ site.third_party_libraries.spotlight.integrity.css }}"
+          crossorigin="anonymous">
   {% endif %}
   {% if page.images.venobox %}
-    <!-- Venobox -->
-    <link
-      defer
-      rel="stylesheet"
-      href="{{ site.third_party_libraries.venobox.url.css }}"
-      integrity="{{ site.third_party_libraries.venobox.integrity.css }}"
-      crossorigin="anonymous"
-    >
+    <link defer rel="stylesheet"
+          href="{{ site.third_party_libraries.venobox.url.css }}"
+          integrity="{{ site.third_party_libraries.venobox.integrity.css }}"
+          crossorigin="anonymous">
   {% endif %}
 {% endif %}
 
