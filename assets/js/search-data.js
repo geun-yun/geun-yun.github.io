@@ -405,8 +405,8 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-i-have-finally-submitted-my-honours-thesis-shield-framework",
-          title: 'I have finally submitted my Honours thesis (SHIELD framework)!',
+            },},{id: "news-placeholder-i-have-finally-submitted-my-honours-thesis-shield-framework",
+          title: '{Placeholder: I have finally submitted my Honours thesis (SHIELD framework)!}',
           description: "",
           section: "News",},{id: "news-i-submitted-a-manuscript-to-sage-digital-health-special-issue-innovations-and-applications-of-synthetic-data-in-transforming-healthcare-systems-opportunities-challenges-and-ethical-considerations-for-the-first-time-and-the-work-is-derived-from-my-honours-thesis-shield-framework",
           title: 'I submitted a manuscript to SAGE Digital Health special issue “Innovations and Applications...',
