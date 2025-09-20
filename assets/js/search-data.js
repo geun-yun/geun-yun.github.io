@@ -483,6 +483,11 @@ ninja.data = [{
           description: "Evaluates Elo vs Glicko for how well ratings reflect chess performance, focusing on expected score, rating deviation, and responsiveness.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ib_ee/";
+            },},{id: "projects-ib-mathematics-ia-wheel-of-theodorus",
+          title: 'IB Mathematics IA — Wheel of Theodorus',
+          description: "Investigates the Wheel of Theodorus, deriving its geometric properties, links to irrational numbers, and approximation to the Archimedean spiral.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ib_ia/";
             },},{
         id: 'social-email',
         title: 'email',
