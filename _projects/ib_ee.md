@@ -19,7 +19,6 @@ date: 2021-05-01        # adjust if you want exact timing
 - Explains Glicko’s RD, its growth via constant \(c\), and how RD contracts with recent results, yielding more responsive ratings.
 
 <!-- Inline PDF viewer -->
-<p><a class="btn btn-sm z-depth-0" href="{{ '/assets/pdf/IB_EE.pdf' | relative_url }}">Download PDF</a></p>
 <div class="pdf-viewer my-3">
   <object
     data="{{ '/assets/pdf/IB_EE.pdf' | relative_url }}"
