@@ -4,17 +4,9 @@ title: "IB Extended Essay — Chess Rating Systems"
 subtitle: "Reliability of Elo and Glicko"
 category: International Baccalaureate    # This makes it appear under the IB section on your Early Research page
 importance: 8                # Higher = shows earlier within its category
-thumbnail: IB_EE_thumbnail.png   # put this image in assets/img/projects/
+img: /assets/img/IB_EE_thumbnail.png   # put this image in assets/img/projects/
+description: Evaluates Elo vs Glicko for how well ratings reflect chess performance, focusing on expected score, rating deviation, and responsiveness.
 date: 2021-05-01             # adjust if you want exact timing
-tags: [Chess, Elo, Glicko, Statistics, Probability, IB EE]
-links:
-  - icon: fa-solid fa-file-pdf
-    name: PDF
-    url: /assets/pdf/IB_EE.pdf
-  - icon: fa-solid fa-chart-line
-    name: Summary
-    url: /early-research/#ib   # optional: point to a section anchor if you make one
-published: true
 ---
 
 **Research question.** *To what extent do the Elo and Glicko rating systems reflect a player’s performance in chess?*
