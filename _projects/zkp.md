@@ -24,12 +24,12 @@ date: 2023-04-01
     data="{{ '/assets/pdf/ZKP.pdf' | relative_url }}"
     type="application/pdf"
     width="100%"
-    height="900"
+    height="700"
   >
     <iframe
       src="{{ '/assets/pdf/ZKP.pdf' | relative_url }}"
       width="100%"
-      height="900"
+      height="700"
       style="border: none;"
     ></iframe>
 
