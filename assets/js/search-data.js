@@ -478,6 +478,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-ib-extended-essay-chess-rating-systems",
+          title: 'IB Extended Essay — Chess Rating Systems',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ib_ee/";
             },},{
         id: 'social-email',
         title: 'email',
