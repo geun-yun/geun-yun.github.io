@@ -15,12 +15,10 @@ date: 2021-11-01        # adjust if you want exact timing
 
 **Highlights**
 - Hypotenuse of the $n$-th triangle follows $R_n = \sqrt{n+1}$.
-- Cumulative angle given by
-  
-  $$\sum_{x=1}^{n}\arcsin\big(\tfrac{1}{\sqrt{x+1}}\big)$$.
+- Cumulative angle given by $\sum_{x=1}^{n}\arcsin\big(\tfrac{1}{\sqrt{x+1}}\big)$.
 - Winding distance from the $v$-th triangle to its immediate inner $u$-th triangle is
 
-  $$\sqrt{v} - \frac{\sqrt{u}}{\cos\Bigg(\sum_{n=u+1}^{v} \arcsin\bigg(\tfrac{1}{\sqrt{n}}\bigg)\Bigg)}$$
+  $$\sqrt{v} - \frac{\sqrt{u}}{\cos\Bigg(\sum_{n=u+1}^{v} \arcsin\bigg(\tfrac{1}{\sqrt{n}}\bigg)\Bigg)},$$
 
   which approaches $\pi$, consistent with Archimedean spiral spacing.
 
