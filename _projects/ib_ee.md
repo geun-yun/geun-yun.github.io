@@ -9,9 +9,9 @@ description: Evaluates Elo vs Glicko for how well ratings reflect chess performa
 date: 2021-05-01        # adjust if you want exact timing
 ---
 
-**Research question.** *To what extent do the Elo and Glicko rating systems reflect a player’s performance in chess?*
+**Research question:** *To what extent do the Elo and Glicko rating systems reflect a player’s performance in chess?*
 
-**Overview.** The essay analyses Elo’s normal-distribution premise (σ≈200) to derive draw probabilities and expected scores, then reformulates expected score as a logistic curve based on rating differences (≈400 points ≙ 10× odds). It contrasts this with Glicko’s introduction of **rating deviation (RD)** and update dynamics (constant $c$, RD bounds), showing how uncertainty and game volume affect rating adjustments.
+**Overview:** The essay analyses Elo’s normal-distribution premise (σ≈200) to derive draw probabilities and expected scores, then reformulates expected score as a logistic curve based on rating differences (≈400 points ≙ 10× odds). It contrasts this with Glicko’s introduction of **rating deviation (RD)** and update dynamics (constant $c$, RD bounds), showing how uncertainty and game volume affect rating adjustments.
 
 **Highlights**
 - Derives intersection area of two normal distributions to interpret draw likelihood at a given rating gap.
