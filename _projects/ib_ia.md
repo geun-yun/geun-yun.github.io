@@ -3,7 +3,7 @@ layout: page
 title: "IB Mathematics IA — Wheel of Theodorus"
 subtitle: "Exploring Irrational Roots and Spiral Geometry"
 category: International Baccalaureate    # Appears under the IB section of your Early Research page
-importance: 7                # Lower than EE if you want EE shown first
+importance: 9                # Lower than EE if you want EE shown first
 img: /assets/img/IB_IA_thumbnail.png   # put this image in assets/img/projects/
 description: Investigates the Wheel of Theodorus, deriving its geometric properties, links to irrational numbers, and approximation to the Archimedean spiral.
 date: 2021-11-01        # adjust if you want exact timing
