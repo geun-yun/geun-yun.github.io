@@ -24,7 +24,7 @@ ninja.data = [{
             window.location.href = "/repositories/";
           },
         },{id: "nav-teaching",
-          title: "Teaching",
+          title: "teaching",
           description: "This page lists only public teaching experience, excluding private tutoring.",
           section: "Navigation",
           handler: () => {
