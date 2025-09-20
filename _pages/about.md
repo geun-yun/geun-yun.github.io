@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: Home
 permalink: /
 subtitle: <a href='https://comp.anu.edu.au/'>Australian National University</a>, geun.yun@anu.edu.au
 
