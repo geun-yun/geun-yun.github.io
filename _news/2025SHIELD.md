@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I have finally submitted my Honours thesis ([SHIELD]() framework)!
+{Placeholder: I have finally submitted my Honours thesis ([SHIELD]() framework)!}
