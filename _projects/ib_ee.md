@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: page
 title: "IB Extended Essay — Chess Rating Systems"
 subtitle: "Reliability of Elo and Glicko"
 category: International Baccalaureate    # This makes it appear under the IB section on your Early Research page
