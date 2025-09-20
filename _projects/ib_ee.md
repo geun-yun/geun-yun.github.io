@@ -41,3 +41,4 @@ date: 2021-05-01        # adjust if you want exact timing
   </object>
 </div>
 
+Special thanks to [Dr. Mark Glickman](https://www.glicko.net/) for responding to my inquiry about his Glicko rating system and sharing valuable insights.
