@@ -474,7 +474,7 @@ ninja.data = [{
               window.location.href = "/projects/ib_ia/";
             },},{id: "projects-research-proposal-amp-literature-review-zero-knowledge-proofs",
           title: 'Research Proposal &amp;amp; Literature Review - Zero-Knowledge Proofs',
-          description: "Proposal and survey on using zk-SNARK-based zero-knowledge proofs to verify complex actions in decentralised Bayesian games (e.g., poker) without leaking private information.",
+          description: "Proposal and review on using zk-SNARK-based zero-knowledge proofs to verify complex actions in decentralised Bayesian games (e.g., poker) without leaking private information.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/zkp/";
             },},{
