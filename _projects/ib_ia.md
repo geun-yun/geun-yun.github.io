@@ -31,13 +31,13 @@ date: 2021-11-01        # adjust if you want exact timing
     data="{{ '/assets/pdf/IB_IA.pdf' | relative_url }}"
     type="application/pdf"
     width="100%"
-    height="900"
+    height="700"
   >
     <!-- Fallback for browsers that block <object> -->
     <iframe
       src="{{ '/assets/pdf/IB_IA.pdf' | relative_url }}"
       width="100%"
-      height="900"
+      height="700"
       style="border: none;"
     ></iframe>
 
