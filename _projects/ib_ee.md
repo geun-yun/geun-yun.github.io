@@ -7,6 +7,7 @@ importance: 8                # Higher = shows earlier within its category
 img: /assets/img/IB_EE_thumbnail.png   # put this image in assets/img/projects/
 description: Evaluates Elo vs Glicko for how well ratings reflect chess performance, focusing on expected score, rating deviation, and responsiveness.
 date: 2021-05-01        # adjust if you want exact timing
+math: true
 ---
 
 **Research question.** *To what extent do the Elo and Glicko rating systems reflect a player’s performance in chess?*
