@@ -5,7 +5,7 @@ permalink: /early-research/
 description: A collection of early research works (IB Extended Essay, IB Math IA, simple literature review, etc.)
 nav: true
 nav_order: 6
-display_categories: [Undergraduate, International Baccalaureate]
+display_categories: [Undergraduate, International Baccalaureate, work, fun]
 horizontal: false
 ---
 
