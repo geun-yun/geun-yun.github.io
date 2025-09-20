@@ -6,7 +6,7 @@ subtitle: <a href='https://comp.anu.edu.au/'>Australian National University</a>,
 
 profile:
   align: right
-  image: photo_geun1.jpg
+  image: photo_geun.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Canberra, ACT 2601</p>
