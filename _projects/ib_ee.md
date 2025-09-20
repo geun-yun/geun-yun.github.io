@@ -18,4 +18,27 @@ date: 2021-05-01             # adjust if you want exact timing
 - Recasts Elo expected score into logistic form \(E_A = \frac{1}{1+10^{(R_B-R_A)/400}}\).
 - Explains Glicko’s RD, its growth via constant \(c\), and how RD contracts with recent results, yielding more responsive ratings.
 
-> Word count: ~3990, excluding tables/appendices with game data (3-min, 10-min formats).
+<!-- Inline PDF viewer -->
+<p><a class="btn btn-sm z-depth-0" href="{{ '/assets/pdf/IB_EE.pdf' | relative_url }}">Download PDF</a></p>
+<div class="pdf-viewer my-3">
+  <object
+    data="{{ '/assets/pdf/IB_EE.pdf' | relative_url }}"
+    type="application/pdf"
+    width="100%"
+    height="900"
+  >
+    <!-- Fallback for browsers that block <object> -->
+    <iframe
+      src="{{ '/assets/pdf/IB_EE.pdf' | relative_url }}"
+      width="100%"
+      height="900"
+      style="border: none;"
+    ></iframe>
+
+    <p>
+      Your browser can’t display PDFs. 
+      <a href="{{ '/assets/pdf/IB_EE.pdf' | relative_url }}">Open the PDF</a>.
+    </p>
+  </object>
+</div>
+
