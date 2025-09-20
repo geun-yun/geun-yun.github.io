@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /repositories/
-title: repositories
+title: Repositories
 description: This page only includes repositories that are directly relevant to my research.
 nav: true
 nav_order: 3
