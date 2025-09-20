@@ -36,6 +36,6 @@ $max-content-width: {{ site.max_width }};
 }
 @media (min-width: 992px) {
   .navbar .navbar-nav {
-    column-gap: 1.2rem; /* tweak this number to widen/narrow the gap */
+    column-gap: 1.4rem; /* tweak this number to widen/narrow the gap */
   }
 }
