@@ -5,7 +5,7 @@ subtitle: "Reliability of Elo and Glicko"
 category: International Baccalaureate    # This makes it appear under the IB section on your Early Research page
 importance: 8                # Higher = shows earlier within its category
 thumbnail: IB_EE_thumbnail.png   # put this image in assets/img/projects/
-date: 2019-11-01             # adjust if you want exact timing
+date: 2021-05-01             # adjust if you want exact timing
 tags: [Chess, Elo, Glicko, Statistics, Probability, IB EE]
 links:
   - icon: fa-solid fa-file-pdf
