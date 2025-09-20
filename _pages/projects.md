@@ -1,6 +1,6 @@
 ---
 layout: page
-title: EarlyResearch
+title: Early research
 permalink: /early-research/
 description: A collection of early research works (IB Extended Essay, IB Math IA, simple literature review, etc.)
 nav: true
