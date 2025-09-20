@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://geun-yun.github.io/sitemap.xml
+Sitemap: https://hyeonggeunyun.com/sitemap.xml
