@@ -34,3 +34,8 @@ $max-content-width: {{ site.max_width }};
     height: 70vh; /* smaller on phones */
   }
 }
+@media (min-width: 992px) {
+  .navbar .navbar-nav {
+    column-gap: 1.2rem; /* tweak this number to widen/narrow the gap */
+  }
+}
