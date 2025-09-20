@@ -5,7 +5,7 @@ subtitle: "Decentralised Bayesian Games with Complex Rules"
 category: Undergraduate
 importance: 9
 img: /assets/img/ZKP_thumbnail.png
-description: Proposal and survey on using zk-SNARK-based zero-knowledge proofs to verify complex actions in decentralised Bayesian games (e.g., poker) without leaking private information.
+description: Proposal and review on using zk-SNARK-based zero-knowledge proofs to verify complex actions in decentralised Bayesian games (e.g., poker) without leaking private information.
 date: 2023-04-01
 ---
 
