@@ -59,16 +59,17 @@
 {% endif %}
 
 {%- comment -%} Favicons for light/dark mode {%- endcomment -%}
-<link id="dynamic-favicon" rel="icon" type="image/png"
-      href="{{ '/assets/img/favicon-light.png' | relative_url | bust_file_cache }}">
-
-<!-- Let the browser pick based on system theme -->
+<!-- Baseline (system preference) -->
 <link rel="icon" type="image/png"
       href="{{ '/assets/img/favicon-light.png' | relative_url | bust_file_cache }}"
       media="(prefers-color-scheme: light)">
 <link rel="icon" type="image/png"
       href="{{ '/assets/img/favicon-dark.png'  | relative_url | bust_file_cache }}"
       media="(prefers-color-scheme: dark)">
+
+<!-- JS-controlled favicon (always last so it wins) -->
+<link id="dynamic-favicon" rel="icon" type="image/png"
+      href="{{ '/assets/img/favicon-light.png' | relative_url | bust_file_cache }}">
 
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
@@ -86,35 +87,63 @@
   <script>
     initTheme();
 
-    // Live favicon switcher (works with both system + al-folio toggle)
+    // Live favicon switcher (system + al-folio toggle)
     (function () {
-      const lightHref = "{{ '/assets/img/favicon-light.png' | relative_url | bust_file_cache }}";
-      const darkHref  = "{{ '/assets/img/favicon-dark.png'  | relative_url | bust_file_cache }}";
-      const link = document.querySelector('#dynamic-favicon');
+      const LIGHT = "{{ '/assets/img/favicon-light.png' | relative_url | bust_file_cache }}";
+      const DARK  = "{{ '/assets/img/favicon-dark.png'  | relative_url | bust_file_cache }}";
+
+      function ensureLastIconLink() {
+        const head = document.head || document.getElementsByTagName('head')[0];
+        let link = document.querySelector('#dynamic-favicon');
+        if (!link) {
+          link = document.createElement('link');
+          link.id = 'dynamic-favicon';
+          link.rel = 'icon';
+          link.type = 'image/png';
+          head.appendChild(link);
+        } else if (link.parentNode.lastElementChild !== link) {
+          head.appendChild(link); // move to end so it wins
+        }
+        return link;
+      }
+
       const mql = window.matchMedia('(prefers-color-scheme: dark)');
 
       function isDark() {
-        const attr = document.documentElement.getAttribute('data-theme');
-        if (attr === 'dark') return true;
-        if (attr === 'light') return false;
-        return mql.matches; // fallback
+        const htmlTheme = document.documentElement.getAttribute('data-theme');
+        if (htmlTheme === 'dark') return true;
+        if (htmlTheme === 'light') return false;
+
+        const bodyTheme = document.body && document.body.getAttribute('data-theme');
+        if (bodyTheme === 'dark') return true;
+        if (bodyTheme === 'light') return false;
+
+        return mql.matches;
       }
 
-      function update() {
-        if (!link) return;
-        link.href = isDark() ? darkHref : lightHref;
+      function setFavicon() {
+        const link = ensureLastIconLink();
+        const desired = isDark() ? DARK : LIGHT;
+        const bust = (desired.indexOf('?') >= 0 ? '&' : '?') + 't=' + (Date.now() % 1e7);
+        link.href = desired + bust;
       }
 
-      // Initial
-      update();
+      // Initial run
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setFavicon);
+      } else {
+        setFavicon();
+      }
 
-      // Listen to system changes
-      if (mql.addEventListener) mql.addEventListener('change', update);
-      else mql.addListener(update);
+      // Watch for changes
+      if (mql.addEventListener) mql.addEventListener('change', setFavicon);
+      else mql.addListener(setFavicon);
 
-      // Listen to theme toggler
-      const mo = new MutationObserver(update);
+      const mo = new MutationObserver(setFavicon);
       mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+      if (document.body) mo.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+
+      window.addEventListener('themechange', setFavicon, { passive: true });
     })();
   </script>
 {% endif %}
