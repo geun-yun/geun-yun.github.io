@@ -10,7 +10,7 @@ ninja.data = [{
       window.location.href = "/";
     },
   },{id: "nav-publications",
-          title: "Publications",
+          title: "publications",
           description: "Publications are listed in reversed chronological order by categories.",
           section: "Navigation",
           handler: () => {
@@ -31,7 +31,7 @@ ninja.data = [{
             window.location.href = "/teaching/";
           },
         },{id: "nav-earlyresearch",
-          title: "EarlyResearch",
+          title: "earlyResearch",
           description: "A collection of early research works (IB Extended Essay, IB Math IA, simple literature review, etc.)",
           section: "Navigation",
           handler: () => {
