@@ -6,12 +6,12 @@ category: International Baccalaureate    # This makes it appear under the IB sec
 importance: 8                # Higher = shows earlier within its category
 img: /assets/img/IB_EE_thumbnail.png   # put this image in assets/img/projects/
 description: Evaluates Elo vs Glicko for how well ratings reflect chess performance, focusing on expected score, rating deviation, and responsiveness.
-date: 2021-05-01             # adjust if you want exact timing
+date: 2021        # adjust if you want exact timing
 ---
 
 **Research question.** *To what extent do the Elo and Glicko rating systems reflect a player’s performance in chess?*
 
-**Overview.** The essay analyzes Elo’s normal-distribution premise (σ≈200) to derive draw probabilities and expected scores, then reformulates expected score as a logistic curve based on rating differences (≈400 points ≙ 10× odds). It contrasts this with Glicko’s introduction of **rating deviation (RD)** and update dynamics (constant \(c\), RD bounds), showing how uncertainty and game volume affect rating adjustments.
+**Overview.** The essay analyses Elo’s normal-distribution premise (σ≈200) to derive draw probabilities and expected scores, then reformulates expected score as a logistic curve based on rating differences (≈400 points ≙ 10× odds). It contrasts this with Glicko’s introduction of **rating deviation (RD)** and update dynamics (constant \(c\), RD bounds), showing how uncertainty and game volume affect rating adjustments.
 
 **Highlights**
 - Derives intersection area of two normal distributions to interpret draw likelihood at a given rating gap.
