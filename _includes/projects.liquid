@@ -13,6 +13,18 @@
       {% endif %}
       <div class="card-body">
         <h2 class="card-title">{{ project.title }}</h2>
+        {% if project.subtitle %}
+          <div class="text-muted small mb-1">{{ project.subtitle }}</div>
+        {% endif %}
+
+        {% if project.date %}
+          <div class="text-muted small mb-2">
+            <time datetime="{{ project.date | date_to_xmlschema }}">
+              {{ project.date | date: "%Y" }}  {# e.g., 01 May 2021 #}
+            </time>
+          </div>
+        {% endif %}
+
         <p class="card-text">{{ project.description }}</p>
         <div class="row ml-1 mr-1 p-0">
           {% if project.github %}
