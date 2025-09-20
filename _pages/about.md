@@ -25,4 +25,4 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Research area of interest: Explainable Artificial Intelligence (XAI) and fair, equitable machine learning, with a particular focus on health-informatics. My research explores frameworks that ensure transparency and interpretability in clinical models while addressing fairness and ethical considerations, aiming to support equitable decision-making in healthcare.
+<u>Research area of interest</u>: Explainable Artificial Intelligence (XAI) and fair, equitable machine learning, with a particular focus on health-informatics. My research explores frameworks that ensure transparency and interpretability in clinical models while addressing fairness and ethical considerations, aiming to support equitable decision-making in healthcare.
