@@ -27,7 +27,7 @@ latest_posts:
 
 <u>Bio</u>: Hi all, this is Hyeonggeun Yun, but most of you who know me would know me as Geun, and I prefer to be called by this easier name.  
 
-I was born and lived my early childhood in South Korea, but moved to Australia where I have lived in different places, including Gold Coast, Townsville, and Canberra, for the past 10 years.  
+I was born and lived my early childhood in South Korea, then moved to Australia where I have lived in different places, including Gold Coast, Townsville, and Canberra, for the past 10 years.  
 
 I am currently completing the final semester of my Bachelor of Advanced Computing (Research and Development) (Honours) at the Australian National University, supervised by [Prof. Hanna Suominen](https://comp.anu.edu.au/people/hanna-suominen/) and [Prof. Amanda Barnard](https://comp.anu.edu.au/people/amanda-barnard/). Upon graduation, I aim to further pursue my research career by undertaking a PhD in my research area of interest.  
 
