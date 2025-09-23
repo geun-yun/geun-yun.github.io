@@ -29,7 +29,7 @@ latest_posts:
 
 I was born and lived my early childhood in South Korea, then moved to Australia where I have lived in different places, including Gold Coast, Townsville, and Canberra, for the past 10 years.  
 
-I am currently completing the final semester of my Bachelor of Advanced Computing (Research and Development) (Honours) at the Australian National University. Upon graduation, I aim to further pursue my research career by undertaking a PhD in my research area of interest.  
+I am currently completing the final semester of my Bachelor of Advanced Computing (Research and Development) (Honours) at the Australian National University, supervised by [Prof. Hanna Suominen](https://researchportalplus.anu.edu.au/en/persons/hanna-suominen) and [Prof. Amanda Barnard](https://comp.anu.edu.au/people/amanda-barnard/). Upon graduation, I aim to further pursue my research career by undertaking a PhD in my research area of interest.  
 
 In my free time, I enjoy playing boardgames, chess, and computer games, and at least try to stay active with some exercise.  
 
