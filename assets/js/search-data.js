@@ -468,12 +468,12 @@ ninja.data = [{
           section: "Projects",handler: () => {
               window.location.href = "/projects/ib_ee/";
             },},{id: "projects-ib-mathematics-ia-wheel-of-theodorus",
-          title: 'IB Mathematics IA - Wheel of Theodorus',
+          title: 'IB Mathematics IA — Wheel of Theodorus',
           description: "Investigates the Wheel of Theodorus, deriving its geometric properties, links to irrational numbers, and approximation to the Archimedean spiral.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ib_ia/";
             },},{id: "projects-research-proposal-amp-literature-review-zero-knowledge-proofs",
-          title: 'Research Proposal &amp;amp; Literature Review: Zero-Knowledge Proofs',
+          title: 'Research Proposal &amp;amp; Literature Review - Zero-Knowledge Proofs',
           description: "Proposal and review on using zk-SNARK-based zero-knowledge proofs to verify complex actions in decentralised Bayesian games (e.g., poker) without leaking private information.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/zkp/";
