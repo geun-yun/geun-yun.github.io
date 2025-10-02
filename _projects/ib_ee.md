@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "IB Extended Essay - Chess Rating Systems"
+title: "IB Extended Essay: Chess Rating Systems"
 subtitle: "Reliability of Elo and Glicko"
 category: International Baccalaureate    # This makes it appear under the IB section on your Early Research page
 importance: 8                # Higher = shows earlier within its category
