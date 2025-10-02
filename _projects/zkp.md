@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Research Proposal & Literature Review - Zero-Knowledge Proofs"
+title: "Research Proposal & Literature Review: Zero-Knowledge Proofs"
 subtitle: "Decentralised Bayesian Games with Complex Rules"
 category: Undergraduate
 importance: 9
