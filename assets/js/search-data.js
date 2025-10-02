@@ -463,7 +463,7 @@ ninja.data = [{
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
             },},{id: "projects-ib-extended-essay-chess-rating-systems",
-          title: 'IB Extended Essay - Chess Rating Systems',
+          title: 'IB Extended Essay: Chess Rating Systems',
           description: "Evaluates Elo vs Glicko for how well ratings reflect chess performance, focusing on expected score, rating deviation, and responsiveness.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ib_ee/";
