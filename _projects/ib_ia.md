@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "IB Mathematics IA - Wheel of Theodorus"
+title: "IB Mathematics IA: Wheel of Theodorus"
 subtitle: "Exploring Irrational Roots and Spiral Geometry"
 category: International Baccalaureate    # Appears under the IB section of your Early Research page
 importance: 9                # Lower than EE if you want EE shown first
