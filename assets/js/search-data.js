@@ -411,12 +411,7 @@ ninja.data = [{
           section: "News",},{id: "news-i-have-finally-submitted-my-honours-thesis-shield",
           title: 'I have finally submitted my Honours thesis: SHIELD!',
           description: "",
-          section: "News",},{id: "news-2025graduation",
-          title: '2025graduation',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/2025graduation/";
-            },},{id: "projects-project-1",
+          section: "News",},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
           section: "Projects",handler: () => {
