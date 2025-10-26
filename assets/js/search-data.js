@@ -411,10 +411,12 @@ ninja.data = [{
           section: "News",},{id: "news-i-have-finally-submitted-my-honours-thesis-shield",
           title: 'I have finally submitted my Honours thesis: SHIELD!',
           description: "",
-          section: "News",},{id: "news-placeholder-i-submitted-a-manuscript-to-sage-digital-health-special-issue-innovations-and-applications-of-synthetic-data-in-transforming-healthcare-systems-opportunities-challenges-and-ethical-considerations-for-the-first-time-and-the-work-is-derived-from-my-honours-thesis-shield-framework",
-          title: '{Placeholder: I submitted a manuscript to SAGE Digital Health special issue “Innovations and...',
+          section: "News",},{id: "news-2025sagedigitalhealth",
+          title: '2025sagedigitalhealth',
           description: "",
-          section: "News",},{id: "news-placeholder-i-am-officially-graduated-from-anu-with-bachelor-of-advanced-computing-research-and-development-honours",
+          section: "News",handler: () => {
+              window.location.href = "/news/2025SageDigitalHealth/";
+            },},{id: "news-placeholder-i-am-officially-graduated-from-anu-with-bachelor-of-advanced-computing-research-and-development-honours",
           title: '{Placeholder: I am officially graduated from ANU with Bachelor of Advanced Computing (Research...',
           description: "",
           section: "News",},{id: "projects-project-1",
