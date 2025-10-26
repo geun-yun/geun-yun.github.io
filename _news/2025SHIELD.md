@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-{Placeholder: I have finally submitted my Honours thesis ([SHIELD]() framework)!}
+I have finally submitted my Honours thesis: [SHIELD](https://hyeonggeunyun.com/assets/pdf/yun2025SHIELD.pdf)!
