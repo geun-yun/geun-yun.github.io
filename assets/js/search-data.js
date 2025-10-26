@@ -416,10 +416,12 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/2025SageDigitalHealth/";
-            },},{id: "news-placeholder-i-am-officially-graduated-from-anu-with-bachelor-of-advanced-computing-research-and-development-honours",
-          title: '{Placeholder: I am officially graduated from ANU with Bachelor of Advanced Computing (Research...',
+            },},{id: "news-2025graduation",
+          title: '2025graduation',
           description: "",
-          section: "News",},{id: "projects-project-1",
+          section: "News",handler: () => {
+              window.location.href = "/news/2025graduation/";
+            },},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
           section: "Projects",handler: () => {
