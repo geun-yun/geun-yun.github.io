@@ -411,7 +411,7 @@ ninja.data = [{
           section: "News",},{id: "news-i-have-finally-submitted-my-honours-thesis-shield",
           title: 'I have finally submitted my Honours thesis: SHIELD!',
           description: "",
-          section: "News",},{id: "news-i-will-be-joining-the-university-of-sydney-from-december-to-february-through-the-vacation-research-internship-program-to-work-on-fair-play-in-machine-learning-tackling-bias-in-data",
+          section: "News",},{id: "news-i-will-be-joining-the-university-of-sydney-from-december-to-february-through-the-vacation-research-internship-programto-work-on-fair-play-in-machine-learning-tackling-bias-in-data",
           title: 'I will be joining the University of Sydney from December to February through...',
           description: "",
           section: "News",},{id: "projects-project-1",
