@@ -51,7 +51,17 @@ ninja.data = [{
           section: "News",},{id: "news-i-will-be-joining-the-university-of-sydney-from-december-to-february-through-the-vacation-research-internship-program-to-work-on-fair-play-in-machine-learning-tackling-bias-in-data",
           title: 'I will be joining the University of Sydney from December to February through...',
           description: "",
-          section: "News",},{id: "projects-project-5",
+          section: "News",},{id: "projects-project-3-with-very-long-name",
+          title: 'project 3 with very long name',
+          description: "a project that redirects to another website",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "projects-project-4",
+          title: 'project 4',
+          description: "another without an image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_project/";
+            },},{id: "projects-project-5",
           title: 'project 5',
           description: "a project with a background image",
           section: "Projects",handler: () => {
