@@ -51,12 +51,7 @@ ninja.data = [{
           section: "News",},{id: "news-i-will-be-joining-the-university-of-sydney-from-december-to-february-through-the-vacation-research-internship-program-to-work-on-fair-play-in-machine-learning-tackling-bias-in-data",
           title: 'I will be joining the University of Sydney from December to February through...',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
+          section: "News",},{id: "projects-project-2",
           title: 'project 2',
           description: "a project with a background image and giscus comments",
           section: "Projects",handler: () => {
