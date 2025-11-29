@@ -39,3 +39,11 @@ $max-content-width: {{ site.max_width }};
     column-gap: 1.4rem; /* tweak this number to widen/narrow the gap */
   }
 }
+
+// Force one repository card per row
+.repositories {
+  .repo {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
