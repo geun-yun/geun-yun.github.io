@@ -2,7 +2,7 @@
 layout: about
 title: Home
 permalink: /
-subtitle: <a href='https://comp.anu.edu.au/'>Australian National University</a>, geun.yun@anu.edu.au, [CV](/assets/pdf/PhD_CV.pdf)
+subtitle: <a href='https://comp.anu.edu.au/'>Australian National University</a>, geun.yun@anu.edu.au, <a href='https://hyeonggeunyun.com/assets/pdf/PhD_CV.pdf'>CV</a>
 
 profile:
   align: right
