@@ -37,12 +37,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/early-research/";
           },
-        },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
-            },},{id: "news-i-am-excited-to-announce-the-launch-of-my-personal-academic-portfolio-website-here-i-will-mainly-share-updates-on-my-research-projects-and-publications",
+        },{id: "news-i-am-excited-to-announce-the-launch-of-my-personal-academic-portfolio-website-here-i-will-mainly-share-updates-on-my-research-projects-and-publications",
           title: 'I am excited to announce the launch of my personal academic portfolio website!...',
           description: "",
           section: "News",},{id: "news-i-have-finally-submitted-my-honours-thesis-shield",
