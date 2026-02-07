@@ -172,15 +172,36 @@
     <!-- Journal/Book title and date -->
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
     {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
-    {% if entry.type == 'article' %}
+    
+    {% if entry.type == 'article' and entry.journal %}
       {% capture entrytype %}<em>{{ entry.journal }}</em>{% endcapture %}
-    {% elsif proceedings contains entry.type %}
+    
+    {% elsif proceedings contains entry.type and entry.booktitle %}
       {% capture entrytype %}<em>In {{ entry.booktitle }}</em>{% endcapture %}
-    {% elsif thesis contains entry.type %}
+    
+    {% elsif thesis contains entry.type and entry.school %}
       {% capture entrytype %}<em>{{ entry.school }}</em>{% endcapture %}
+    
     {% else %}
-      {% capture entrytype %}{% endcapture %}
+      {%- comment -%} Fallback for misc/online/unpublished {%- endcomment -%}
+      {% if entry.journal %}
+        {% capture entrytype %}<em>{{ entry.journal }}</em>{% endcapture %}
+      {% elsif entry.booktitle %}
+        {% capture entrytype %}<em>{{ entry.booktitle }}</em>{% endcapture %}
+      {% elsif entry.school %}
+        {% capture entrytype %}<em>{{ entry.school }}</em>{% endcapture %}
+      {% elsif entry.publisher %}
+        {% capture entrytype %}<em>{{ entry.publisher }}</em>{% endcapture %}
+      {% elsif entry.organization %}
+        {% capture entrytype %}<em>{{ entry.organization }}</em>{% endcapture %}
+      {% elsif entry.howpublished %}
+        {% capture entrytype %}<em>{{ entry.howpublished }}</em>{% endcapture %}
+      {% else %}
+        {% capture entrytype %}{% endcapture %}
+      {% endif %}
     {% endif %}
+
+
     {% if entry.month %}
       {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}
     {% endif %}
