@@ -31,6 +31,6 @@ I was born and lived my early childhood in South Korea, then moved to Australia 
 
 As of mid-November, I successfully completed the final semester of my Bachelor of Advanced Computing (Research and Development) (Honours) at the Australian National University, supervised by [Prof. Hanna Suominen](https://researchportalplus.anu.edu.au/en/persons/hanna-suominen) and [Prof. Amanda Barnard](https://comp.anu.edu.au/people/amanda-barnard/). Upon graduation, I aim to further pursue my research career by undertaking a PhD in my research area of interest.  
 
-In my free time, I enjoy playing boardgames, chess, and computer games, and try to stay active with some exercise like swimming.  
+In my free time, I enjoy playing boardgames, and try to stay active with some [exercise](https://www.strava.com/athletes/159175881).  
 
 <u>Research area of interest</u>: Explainable Artificial Intelligence (XAI) and fair, equitable machine learning, with a particular focus on health-informatics. My research explores frameworks that ensure transparency and interpretability in clinical models while addressing fairness and ethical considerations, aiming to support equitable decision-making in healthcare.
