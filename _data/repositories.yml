@@ -4,6 +4,7 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
+  - geun-yun/IF-CRED
   - geun-yun/preprocessing_comparative_study_for_fair_ml
   - geun-yun/SHIELD
   - geun-yun/Quasi_geostrophic_model_for_LEMDA
