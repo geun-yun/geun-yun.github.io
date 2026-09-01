@@ -40,10 +40,22 @@ $max-content-width: {{ site.max_width }};
   }
 }
 
-// Force one repository card per row
+// Keep repository cards compact and centered instead of spanning the viewport.
 .repositories {
+  width: 100%;
+  max-width: 68rem;
+  margin-right: auto;
+  margin-left: auto;
+
   .repo {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .repositories .repo {
+    flex-basis: 50%;
+    max-width: 50%;
   }
 }
