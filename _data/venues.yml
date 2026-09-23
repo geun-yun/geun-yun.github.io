@@ -23,5 +23,9 @@
 "Health Informatics":
   color: "#4CBB17"
 
-"Fairness":
+"Group Fairness":
   color: "#E366B1"
+
+"Individual Fairness":
+  color: "#DB3357"
+  
