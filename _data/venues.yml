@@ -11,9 +11,6 @@
 "Data Assimilation":
   color: "#CD5C5C"
 
-"Logic":
-  color: "#CC7722"
-
 "Machine Learning":
   color: "#00B6E3"
 
@@ -28,4 +25,7 @@
 
 "Individual Fairness":
   color: "#DB3357"
+
+"Neural Network":
+  color: "#CC7722"
   
