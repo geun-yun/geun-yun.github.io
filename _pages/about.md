@@ -29,7 +29,7 @@ latest_posts:
 
 I was born and lived my early childhood in South Korea, then moved to Australia where I have lived in different places, including Gold Coast, Townsville, and Canberra since 2014.  
 
-At the end of 2025, I completed Bachelor of Advanced Computing (Research and Development) (Honours) at the Australian National University (ANU) under the supervision of [Prof. Hanna Suominen](https://researchportalplus.anu.edu.au/en/persons/hanna-suominen) and [Prof. Amanda Barnard](https://comp.anu.edu.au/people/amanda-barnard/). I am currently conducting research with [Dr. Shahadat Uddin](https://profiles.sydney.edu.au/shahadat.uddin) at the University of Sydney (USyd) and working as teaching assistant at both ANU and USyd, with plans to begin a PhD at USyd in 2027.
+At the end of 2025, I completed Bachelor of Advanced Computing (Research and Development) (Honours) at the Australian National University (ANU) under the supervision of [Prof. Hanna Suominen](https://researchportalplus.anu.edu.au/en/persons/hanna-suominen) and [Prof. Amanda Barnard](https://comp.anu.edu.au/people/amanda-barnard/). I am currently conducting research with [Dr. Shahadat Uddin](https://profiles.sydney.edu.au/shahadat.uddin) at the University of Sydney (USyd) and working as a teaching assistant at both ANU and USyd, with plans to begin a PhD at USyd in 2027.
 
 In my free time, I enjoy playing boardgames, and try to stay active with some [exercise](https://www.strava.com/athletes/159175881).  
 
