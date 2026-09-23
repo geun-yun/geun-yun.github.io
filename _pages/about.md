@@ -27,10 +27,10 @@ latest_posts:
 
 <u>Bio</u>: Hi all, this is Hyeonggeun Yun, but most of you who know me would know me as Geun, and I prefer to be called by this easier name.  
 
-I was born and lived my early childhood in South Korea, then moved to Australia where I have lived in different places, including Gold Coast, Townsville, and Canberra, for the past 10 years.  
+I was born and lived my early childhood in South Korea, then moved to Australia where I have lived in different places, including Gold Coast, Townsville, and Canberra since 2014.  
 
-As of mid-November, I successfully completed the final semester of my Bachelor of Advanced Computing (Research and Development) (Honours) at the Australian National University, supervised by [Prof. Hanna Suominen](https://researchportalplus.anu.edu.au/en/persons/hanna-suominen) and [Prof. Amanda Barnard](https://comp.anu.edu.au/people/amanda-barnard/). Upon graduation, I aim to further pursue my research career by undertaking a PhD in my research area of interest.  
+At the end of 2025, I completed Bachelor of Advanced Computing (Research and Development) (Honours) at the Australian National University (ANU) under the supervision of [Prof. Hanna Suominen](https://researchportalplus.anu.edu.au/en/persons/hanna-suominen) and [Prof. Amanda Barnard](https://comp.anu.edu.au/people/amanda-barnard/). I am currently conducting research with [Dr. Shahadat Uddin](https://profiles.sydney.edu.au/shahadat.uddin) at the University of Sydney (USyd) and working as teaching assistant at both ANU and USyd, with plans to begin a PhD at USyd in 2027.
 
 In my free time, I enjoy playing boardgames, and try to stay active with some [exercise](https://www.strava.com/athletes/159175881).  
 
-<u>Research area of interest</u>: Explainable Artificial Intelligence (XAI) and fair, equitable machine learning, with a particular focus on health-informatics. My research explores frameworks that ensure transparency and interpretability in clinical models while addressing fairness and ethical considerations, aiming to support equitable decision-making in healthcare.
+<u>Research area of interest</u>: Explainable AI, algorithmic fairness at group and individual levels, graph machine learning, and health informatics. My research aims to develop transparent and equitable machine-learning methods.
