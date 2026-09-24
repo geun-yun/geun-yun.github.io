@@ -8,10 +8,10 @@ nav_order: 4
 ---
 
 ## Casual Academic (TA/Tutor):
-### Designed lecture slides and liaised course structure for the following course:
+Designed lecture slides and liaised course structure for the following course:\
 2026 Semester 1: <a href="https://www.sydney.edu.au/units/ELEC3612/">ELEC3612 - Pattern Recognition and Machine Intelligence</a> @ USyd
 
-### Taught tutorials and marked assessable items for the following courses:
+Taught tutorials and marked assessable items for the following courses:\
 2026 Semester 2: <a href="https://www.sydney.edu.au/units/ELEC5308/">ELEC5308 - Intelligent Information Engineering Practice</a> @ USyd\
 2026 Semester 2: <a href="https://programsandcourses.anu.edu.au/course/comp3670">COMP3670/6670 - Introduction to Machine Learning</a> @ ANU\
 2025 Semester 2: <a href="https://programsandcourses.anu.edu.au/course/comp3670">COMP3670/6670 - Introduction to Machine Learning</a> @ ANU\
