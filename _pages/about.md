@@ -2,7 +2,7 @@
 layout: about
 title: Home
 permalink: /
-subtitle: <a href='[https://www.sydney.edu.au/]'>University of Sydney</a>, hyeonggeun.yun@sydney.edu.au
+subtitle: <a href='https://www.sydney.edu.au/'>University of Sydney</a>, hyeonggeun.yun@sydney.edu.au
 
 profile:
   align: right
