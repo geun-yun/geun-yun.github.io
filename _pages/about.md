@@ -2,7 +2,7 @@
 layout: about
 title: Home
 permalink: /
-subtitle: <a href='https://comp.anu.edu.au/'>Australian National University</a>, geun.yun@anu.edu.au
+subtitle: <a href='https://comp.anu.edu.au/'>University of Sydney</a>, hyeonggeun.yun@sydney.edu.au
 
 profile:
   align: right
@@ -29,7 +29,7 @@ latest_posts:
 
 I was born and lived my early childhood in South Korea, then moved to Australia where I have lived in different places, including Gold Coast, Townsville, and Canberra since 2014.  
 
-At the end of 2025, I completed Bachelor of Advanced Computing (Research and Development) (Honours) at the Australian National University (ANU) under the supervision of [Prof. Hanna Suominen](https://researchportalplus.anu.edu.au/en/persons/hanna-suominen) and [Prof. Amanda Barnard AM](https://comp.anu.edu.au/people/amanda-barnard/). I am currently conducting research with [Dr. Shahadat Uddin](https://profiles.sydney.edu.au/shahadat.uddin) at the University of Sydney (USyd) and working as a teaching assistant at both ANU and USyd, with plans to begin a PhD at USyd in 2027.
+At the end of 2025, I completed Bachelor of Advanced Computing (Research and Development) (Honours) at the Australian National University (ANU) under the supervision of [Prof. Hanna Suominen](https://researchportalplus.anu.edu.au/en/persons/hanna-suominen) and [Prof. Amanda Barnard AM](https://comp.anu.edu.au/people/amanda-barnard/). I am currently pursuing a PhD in Computer Science under the supervision of [Dr. Shahadat Uddin](https://profiles.sydney.edu.au/shahadat.uddin) at the University of Sydney (USyd) and working as a teaching assistant at both ANU and USyd.
 
 In my free time, I enjoy playing boardgames, and try to stay active with some [exercise](https://www.strava.com/athletes/159175881).  
 
