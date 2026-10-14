@@ -39,7 +39,7 @@ nav_order: 4
     </select>
   </div>
   <div class="academic-filter-footer" style="flex: 1 0 100%;">
-    <span id="teaching-count" class="academic-filter-count" aria-live="polite">6 teaching records</span>
+    <span id="teaching-count" class="academic-filter-count" aria-live="polite">6 results</span>
     <button id="teaching-reset" class="academic-filter-reset" type="button">Reset filters</button>
   </div>
 </div>
@@ -136,7 +136,7 @@ nav_order: 4
         section.hidden = !Array.from(section.querySelectorAll(".teaching-entry"))
           .some(function (entry) { return !entry.hidden; });
       });
-      count.textContent = shown + " teaching " + (shown === 1 ? "record" : "records");
+      count.textContent = shown + " " + (shown === 1 ? "result" : "results");
       empty.hidden = shown !== 0;
     }
 
