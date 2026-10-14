@@ -155,7 +155,7 @@ nav_order: 2
         // Scholar inserts a year heading immediately before each bibliography list.
         // Skip only whitespace/text nodes; do not change the original markup.
         let heading = list.previousElementSibling;
-        if (heading && /^H[1-6]$/.test(heading.tagName) && /^\\d{4}$/.test(heading.textContent.trim())) {
+        if (heading && /^H[1-6]$/.test(heading.tagName) && /^[0-9]{4}$/.test(heading.textContent.trim())) {
           heading.classList.toggle('publication-filter-hidden', !hasVisible);
         }
       });
