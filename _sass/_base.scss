@@ -1423,3 +1423,11 @@ figure.cover {
     color: #23212d !important;
   }
 }
+
+// Homepage section spacing
+.post > article {
+  > h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
