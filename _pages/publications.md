@@ -167,7 +167,7 @@ nav_order: 2
           return !list.classList.contains('publication-filter-hidden');
         }));
       }
-      count.textContent = shown + ' publication' + (shown === 1 ? '' : 's');
+      count.textContent = shown + ' ' + (shown === 1 ? 'result' : 'results');
       empty.hidden = shown !== 0;
     }
 
