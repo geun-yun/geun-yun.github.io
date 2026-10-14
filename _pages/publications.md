@@ -17,36 +17,12 @@ nav_order: 2
       <label for="publication-topic">Topic</label>
       <select id="publication-topic" class="form-control">
         <option value="">All topics</option>
-        {% assign topic_values = '' %}
-        {% for paper in site.bibliography %}
-          {% assign paper_topics = paper.abbr | split: ',' %}
-          {% for topic in paper_topics %}
-            {% assign clean_topic = topic | strip %}
-            {% assign marker = '|' | append: clean_topic | append: '|' %}
-            {% unless topic_values contains marker %}
-              {% assign topic_values = topic_values | append: marker %}
-            {% endunless %}
-          {% endfor %}
-        {% endfor %}
-        {% assign topics = topic_values | split: '||' | sort %}
-        {% for topic in topics %}
-          {% assign cleaned_topic = topic | remove: '|' | strip %}
-          {% if cleaned_topic != '' %}
-            <option value="{{ cleaned_topic | escape }}">{{ cleaned_topic }}</option>
-          {% endif %}
-        {% endfor %}
       </select>
     </div>
     <div class="col-sm-6 mb-2">
       <label for="publication-year">Year</label>
       <select id="publication-year" class="form-control">
         <option value="">All years</option>
-        {% assign paper_years = site.bibliography | map: 'year' | uniq | sort | reverse %}
-        {% for paper_year in paper_years %}
-          {% if paper_year != blank %}
-            <option value="{{ paper_year | escape }}">{{ paper_year }}</option>
-          {% endif %}
-        {% endfor %}
       </select>
     </div>
   </div>
@@ -95,22 +71,26 @@ nav_order: 2
       });
     });
 
-    // Attach metadata by BibTeX key, not by list position or title,
-    // so changes to Scholar's sorting or grouping remain safe.
-    const papers = {
-      {% for paper in site.bibliography %}
-      {{ paper.key | jsonify }}: {
-        year: {{ paper.year | default: '' | append: '' | jsonify }},
-        topics: {{ paper.abbr | default: '' | jsonify }}
-      }{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-    };
-
+    // Metadata is attached directly to each entry by Jekyll Scholar's
+    // bibliography layout. This also supports newly added BibTeX entries.
     const entries = items.map(function (item) {
-      const keyElement = item.querySelector('[id]');
-      const paper = keyElement && papers[keyElement.id];
-      return { element: item, year: paper ? paper.year : '', topics: paper ? paper.topics.split(',').map(function (t) { return t.trim(); }) : [] };
+      const metadata = item.querySelector('[data-publication-year]');
+      return {
+        element: item,
+        year: metadata ? metadata.dataset.publicationYear : '',
+        topics: metadata ? metadata.dataset.publicationTopics.split(',').map(function (t) { return t.trim(); }).filter(Boolean) : []
+      };
     });
+    function addOptions(select, values) {
+      values.forEach(function (value) {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = value;
+        select.appendChild(option);
+      });
+    }
+    addOptions(topic, Array.from(new Set(entries.flatMap(function (entry) { return entry.topics; }))).sort());
+    addOptions(year, Array.from(new Set(entries.map(function (entry) { return entry.year; }).filter(Boolean))).sort().reverse());
 
     function applyFilters() {
       let shown = 0;
