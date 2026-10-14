@@ -82,10 +82,17 @@ nav_order: 4
     width: 100%;
     min-width: 0;
     height: 2.5rem;
-    padding: 0.4rem 2rem 0.4rem 0.7rem;
+    padding: 0.4rem 2.75rem 0.4rem 0.7rem;
     border: 1px solid var(--global-divider-color);
     border-radius: 0.35rem;
-    background: var(--global-bg-color);
+    /* Draw the chevron as a background so its right inset is controllable. */
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--global-bg-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
     color: var(--global-text-color);
     font: inherit;
     font-size: 0.9rem;
