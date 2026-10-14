@@ -2705,7 +2705,14 @@ d-citation-list .references .title {
               }
             }
 
-            delete grammar.rest;
+            // Hide the already-expanded rest grammar without deleting a property
+            // from a potentially inherited grammar object.
+            Object.defineProperty(grammar, "rest", {
+              value: undefined,
+              writable: true,
+              enumerable: false,
+              configurable: true,
+            });
           }
 
           var tokenList = new LinkedList();
