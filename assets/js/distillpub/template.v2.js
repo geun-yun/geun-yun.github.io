@@ -2695,7 +2695,9 @@ d-citation-list .references .title {
           var rest = grammar.rest;
           if (rest) {
             for (var token in rest) {
-              grammar[token] = rest[token];
+              if (Object.prototype.hasOwnProperty.call(rest, token) && token !== "__proto__" && token !== "constructor" && token !== "prototype") {
+                grammar[token] = rest[token];
+              }
             }
 
             delete grammar.rest;
@@ -3087,7 +3089,8 @@ d-citation-list .references .title {
       comment: /<!--[\s\S]*?-->/,
       prolog: /<\?[\s\S]+?\?>/,
       doctype: {
-        pattern: /<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:(?!<!--)[^"'\]]|"[^"]*"|'[^']*'|<!--[\s\S]*?-->)*\]\s*)?>/i,
+        // Avoid nested ambiguous alternatives in the legacy Prism DOCTYPE grammar.
+        pattern: /<!DOCTYPE[^>]*>/i,
         greedy: true,
       },
       cdata: /<!\[CDATA\[[\s\S]*?]]>/i,
@@ -3170,7 +3173,7 @@ d-citation-list .references .title {
         var def = {};
         def[tagName] = {
           pattern: RegExp(
-            /(<__[\s\S]*?>)(?:<!\[CDATA\[[\s\S]*?\]\]>\s*|[\s\S])*?(?=<\/__>)/.source.replace(/__/g, function () {
+            /(<__[^>]*>)[\s\S]*?(?=<\/__>)/.source.replace(/__/g, function () {
               return tagName;
             }),
             "i"
@@ -3328,9 +3331,10 @@ d-citation-list .references .title {
     Prism.languages.javascript["class-name"][0].pattern = /(\b(?:class|interface|extends|implements|instanceof|new)\s+)[\w.\\]+/;
 
     Prism.languages.insertBefore("javascript", "keyword", {
+      // Require an expression-start context to avoid interpreting division as a regex.
+      // Character classes and escaped characters are handled as separate alternatives.
       regex: {
-        pattern:
-          /((?:^|[^$\w\xA0-\uFFFF."'\])\s])\s*)\/(?:\[(?:[^\]\\\r\n]|\\.)*]|\\.|[^/\\\[\r\n])+\/[gimyus]{0,6}(?=(?:\s|\/\*[\s\S]*?\*\/)*(?:$|[\r\n,.;:})\]]|\/\/))/,
+        pattern: /((?:^|[=(,:;!&|?{}[\]\n])\s*)\/(?:\[(?:\\.|[^\]\\\r\n])*\]|\\.|[^/\\[\r\n])+\/[gimyus]{0,6}(?=\s*(?:$|[\r\n,.;:})\]]|\/\/))/,
         lookbehind: true,
         greedy: true,
       },
@@ -4237,7 +4241,10 @@ ${css}
         // normalize the tab indents
         content = content.replace(/\n/, "");
         const tabs = content.match(/\s*/);
-        content = content.replace(new RegExp("\n" + tabs, "g"), "\n");
+        const indentation = (tabs && tabs[0]) || "";
+        if (indentation) {
+          content = content.split("\n" + indentation).join("\n");
+        }
         content = content.trim();
         // wrap code block in pre tag if needed
         if (codeTag.parentNode instanceof ShadowRoot) {
@@ -4678,8 +4685,9 @@ d-references {
       const isException = el.getAttribute("no-toc");
       if (isInTitle || isException) continue;
       // create TOC entry
-      const title = el.textContent;
-      const link = "#" + el.getAttribute("id");
+      const escapeHTML = (value) => String(value).replace(/[&<>"\x27]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "\x27": "&#39;" })[character]);
+      const title = escapeHTML(el.textContent);
+      const link = "#" + encodeURIComponent(el.getAttribute("id") || "");
 
       let newLine = "<li>" + '<a href="' + link + '">' + title + "</a>" + "</li>";
       if (el.tagName == "H3") {
