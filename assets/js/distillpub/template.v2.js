@@ -3089,7 +3089,8 @@ d-citation-list .references .title {
       comment: /<!--[\s\S]*?-->/,
       prolog: /<\?[\s\S]+?\?>/,
       doctype: {
-        pattern: /<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:(?!<!--)[^"'\]]|"[^"]*"|'[^']*'|<!--[\s\S]*?-->)*\]\s*)?>/i,
+        // Avoid nested ambiguous alternatives in the legacy Prism DOCTYPE grammar.
+        pattern: /<!DOCTYPE[^>]*>/i,
         greedy: true,
       },
       cdata: /<!\[CDATA\[[\s\S]*?]]>/i,
@@ -3172,7 +3173,7 @@ d-citation-list .references .title {
         var def = {};
         def[tagName] = {
           pattern: RegExp(
-            /(<__[\s\S]*?>)(?:<!\[CDATA\[[\s\S]*?\]\]>\s*|[\s\S])*?(?=<\/__>)/.source.replace(/__/g, function () {
+            /(<__[^>]*>)[\s\S]*?(?=<\/__>)/.source.replace(/__/g, function () {
               return tagName;
             }),
             "i"
@@ -3330,10 +3331,10 @@ d-citation-list .references .title {
     Prism.languages.javascript["class-name"][0].pattern = /(\b(?:class|interface|extends|implements|instanceof|new)\s+)[\w.\\]+/;
 
     Prism.languages.insertBefore("javascript", "keyword", {
+      // Recognize regex literals with disjoint escaped/unescaped character cases.
+      // This intentionally avoids the legacy nested lookahead/backtracking grammar.
       regex: {
-        pattern:
-          /((?:^|[^$\w\xA0-\uFFFF."'\])\s])\s*)\/(?:\[(?:[^\]\\\r\n]|\\.)*]|\\.|[^/\\\[\r\n])+\/[gimyus]{0,6}(?=(?:\s|\/\*[\s\S]*?\*\/)*(?:$|[\r\n,.;:})\]]|\/\/))/,
-        lookbehind: true,
+        pattern: /\/(?:\\.|[^\/\\\r\n])+\/[gimyus]{0,6}/,
         greedy: true,
       },
       // This must be declared before keyword because we use "function" inside the look-forward
