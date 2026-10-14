@@ -3331,10 +3331,11 @@ d-citation-list .references .title {
     Prism.languages.javascript["class-name"][0].pattern = /(\b(?:class|interface|extends|implements|instanceof|new)\s+)[\w.\\]+/;
 
     Prism.languages.insertBefore("javascript", "keyword", {
-      // Recognize regex literals with disjoint escaped/unescaped character cases.
-      // This intentionally avoids the legacy nested lookahead/backtracking grammar.
+      // Require an expression-start context to avoid interpreting division as a regex.
+      // Character classes and escaped characters are handled as separate alternatives.
       regex: {
-        pattern: /\/(?:\\.|[^\/\\\r\n])+\/[gimyus]{0,6}/,
+        pattern: /((?:^|[=(,:;!&|?{}[\]\n])\s*)\/(?:\[(?:\\.|[^\]\\\r\n])*\]|\\.|[^/\\[\r\n])+\/[gimyus]{0,6}(?=\s*(?:$|[\r\n,.;:})\]]|\/\/))/,
+        lookbehind: true,
         greedy: true,
       },
       // This must be declared before keyword because we use "function" inside the look-forward
