@@ -9,40 +9,38 @@ nav_order: 4
 
 ## Casual Academic (TA/Tutor):
 
-<div id="teaching-filters" class="mb-3" role="group" aria-label="Filter teaching experience">
-  <div class="row">
-    <div class="col-sm-4 mb-2">
-      <label for="teaching-course">Course</label>
-      <select id="teaching-course" class="form-control">
-        <option value="">All courses</option>
-        <option value="ELEC3612">ELEC3612</option>
-        <option value="ELEC5308">ELEC5308</option>
-        <option value="COMP3670/6670">COMP3670/6670</option>
-        <option value="COMP1600/6260">COMP1600/6260</option>
-      </select>
-    </div>
-    <div class="col-sm-4 mb-2">
-      <label for="teaching-year">Year</label>
-      <select id="teaching-year" class="form-control">
-        <option value="">All years</option>
-        <option value="2026">2026</option>
-        <option value="2025">2025</option>
-        <option value="2024">2024</option>
-        <option value="2023">2023</option>
-      </select>
-    </div>
-    <div class="col-sm-4 mb-2">
-      <label for="teaching-university">University</label>
-      <select id="teaching-university" class="form-control">
-        <option value="">All universities</option>
-        <option value="USyd">USyd</option>
-        <option value="ANU">ANU</option>
-      </select>
-    </div>
+<div id="teaching-filters" class="academic-filter-bar" role="group" aria-label="Filter teaching experience">
+  <div class="academic-filter-field">
+    <label for="teaching-course">Course</label>
+    <select id="teaching-course">
+      <option value="">All courses</option>
+      <option value="ELEC3612">ELEC3612</option>
+      <option value="ELEC5308">ELEC5308</option>
+      <option value="COMP3670/6670">COMP3670/6670</option>
+      <option value="COMP1600/6260">COMP1600/6260</option>
+    </select>
   </div>
-  <div class="d-flex align-items-center justify-content-between mb-2">
-    <small id="teaching-count" aria-live="polite">6 teaching records</small>
-    <button id="teaching-reset" type="button" class="btn btn-sm btn-outline-secondary">Reset filters</button>
+  <div class="academic-filter-field">
+    <label for="teaching-year">Year</label>
+    <select id="teaching-year">
+      <option value="">All years</option>
+      <option value="2026">2026</option>
+      <option value="2025">2025</option>
+      <option value="2024">2024</option>
+      <option value="2023">2023</option>
+    </select>
+  </div>
+  <div class="academic-filter-field">
+    <label for="teaching-university">University</label>
+    <select id="teaching-university">
+      <option value="">All universities</option>
+      <option value="USyd">USyd</option>
+      <option value="ANU">ANU</option>
+    </select>
+  </div>
+  <div class="academic-filter-footer" style="flex: 1 0 100%;">
+    <span id="teaching-count" class="academic-filter-count" aria-live="polite">6 results</span>
+    <button id="teaching-reset" class="academic-filter-reset" type="button">Reset filters</button>
   </div>
 </div>
 
@@ -62,6 +60,52 @@ nav_order: 4
   </div>
   <p id="teaching-empty" hidden>No teaching records match these filters.</p>
 </div>
+
+<style>
+  .academic-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 0.75rem 1rem;
+    margin: 1.25rem 0 1.5rem;
+  }
+  .academic-filter-field { flex: 1 1 175px; min-width: 0; }
+  .academic-filter-field label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--global-text-color);
+  }
+  .academic-filter-field select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 2.5rem;
+    padding: 0.4rem 2rem 0.4rem 0.7rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.35rem;
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
+    font: inherit;
+    font-size: 0.9rem;
+    color-scheme: light dark;
+  }
+  .academic-filter-field select:focus-visible,
+  .academic-filter-reset:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 2px; }
+  .academic-filter-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem; margin-top: 0.35rem; }
+  .academic-filter-count { color: var(--global-text-color-light); font-size: 0.85rem; }
+  .academic-filter-reset {
+    border: 0;
+    background: transparent;
+    color: var(--global-theme-color);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.4rem 0;
+  }
+  .academic-filter-reset:hover { text-decoration: underline; }
+</style>
 
 <script>
 (function () {
@@ -92,7 +136,7 @@ nav_order: 4
         section.hidden = !Array.from(section.querySelectorAll(".teaching-entry"))
           .some(function (entry) { return !entry.hidden; });
       });
-      count.textContent = shown + " teaching " + (shown === 1 ? "record" : "records");
+      count.textContent = shown + " " + (shown === 1 ? "result" : "results");
       empty.hidden = shown !== 0;
     }
 
