@@ -2696,7 +2696,12 @@ d-citation-list .references .title {
           if (rest) {
             for (var token in rest) {
               if (Object.prototype.hasOwnProperty.call(rest, token) && token !== "__proto__" && token !== "constructor" && token !== "prototype") {
-                grammar[token] = rest[token];
+                Object.defineProperty(grammar, token, {
+                  value: rest[token],
+                  writable: true,
+                  enumerable: true,
+                  configurable: true,
+                });
               }
             }
 
