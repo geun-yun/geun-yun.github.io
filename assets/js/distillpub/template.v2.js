@@ -2695,7 +2695,9 @@ d-citation-list .references .title {
           var rest = grammar.rest;
           if (rest) {
             for (var token in rest) {
-              grammar[token] = rest[token];
+              if (Object.prototype.hasOwnProperty.call(rest, token) && token !== "__proto__" && token !== "constructor" && token !== "prototype") {
+                grammar[token] = rest[token];
+              }
             }
 
             delete grammar.rest;
@@ -4237,7 +4239,10 @@ ${css}
         // normalize the tab indents
         content = content.replace(/\n/, "");
         const tabs = content.match(/\s*/);
-        content = content.replace(new RegExp("\n" + tabs, "g"), "\n");
+        const indentation = (tabs && tabs[0]) || "";
+        if (indentation) {
+          content = content.split("\n" + indentation).join("\n");
+        }
         content = content.trim();
         // wrap code block in pre tag if needed
         if (codeTag.parentNode instanceof ShadowRoot) {
@@ -4678,8 +4683,9 @@ d-references {
       const isException = el.getAttribute("no-toc");
       if (isInTitle || isException) continue;
       // create TOC entry
-      const title = el.textContent;
-      const link = "#" + el.getAttribute("id");
+      const escapeHTML = (value) => String(value).replace(/[&<>"\x27]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "\x27": "&#39;" })[character]);
+      const title = escapeHTML(el.textContent);
+      const link = "#" + encodeURIComponent(el.getAttribute("id") || "");
 
       let newLine = "<li>" + '<a href="' + link + '">' + title + "</a>" + "</li>";
       if (el.tagName == "H3") {
