@@ -40,22 +40,78 @@ $max-content-width: {{ site.max_width }};
   }
 }
 
-// Keep repository cards compact and centered instead of spanning the viewport.
-.repositories {
-  width: 100%;
-  max-width: 68rem;
-  margin-right: auto;
-  margin-left: auto;
+// Repository cards use the site's theme colours and need no remote images.
+.repositories-intro {
+  max-width: 46rem;
+  margin-bottom: 2rem;
+}
 
-  .repo {
-    flex: 0 0 100%;
-    max-width: 100%;
+.repositories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.repository-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.5rem;
+  background-color: var(--global-card-bg-color);
+
+  .repository-card-category {
+    margin-bottom: 0.75rem;
+    color: var(--global-text-color);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .repository-card-title {
+    margin: 0 0 0.75rem;
+    font-size: 1.3rem;
+    line-height: 1.35;
+    font-weight: 500;
+  }
+
+  .repository-card-description {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .repository-card-owner {
+    margin-top: auto;
+    margin-bottom: 1rem;
+    color: var(--global-text-color);
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+  }
+
+  .repository-card-link {
+    align-self: flex-start;
+    font-weight: 500;
+  }
+
+  a {
+    color: var(--global-theme-color);
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 4px;
+    border-radius: 2px;
   }
 }
 
-@media (min-width: 768px) {
-  .repositories .repo {
-    flex-basis: 50%;
-    max-width: 50%;
+.repositories-more {
+  margin-top: 2rem;
+}
+
+@media (max-width: 767px) {
+  .repositories {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

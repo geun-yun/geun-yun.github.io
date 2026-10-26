@@ -1,11 +1,32 @@
 github_users:
   - geun-yun
 
-repo_description_lines_max: 2
-
 github_repos:
   - geun-yun/IF-CRED
   - geun-yun/preprocessing_comparative_study_for_fair_ml
   - geun-yun/SHIELD
   - geun-yun/Quasi_geostrophic_model_for_LEMDA
   - HarrisonOates/COMP2560-Theorem-Prover-Code
+
+# Card content is stored locally so the page does not depend on an image service or API.
+repo_details:
+  geun-yun/IF-CRED:
+    title: IF-CRED
+    category: Individual fairness
+    description: Reproducible experiments for evaluating individual fairness through coverage, metric agreement, and model stability.
+  geun-yun/preprocessing_comparative_study_for_fair_ml:
+    title: Preprocessing for fair machine learning
+    category: Group fairness
+    description: Comparative evaluation and EMD-driven optimisation of preprocessing methods for fair machine learning.
+  geun-yun/SHIELD:
+    title: SHIELD
+    category: Equitable learning
+    description: A Shapley and information-theory based framework for equitable learning through dissimilar feature grouping.
+  geun-yun/Quasi_geostrophic_model_for_LEMDA:
+    title: Quasi-geostrophic modelling
+    category: Data assimilation
+    description: A quasi-geostrophic model for LEMDA, with an accompanying paper and simulation results.
+  HarrisonOates/COMP2560-Theorem-Prover-Code:
+    title: Theorem prover comparison
+    category: Formal verification
+    description: A comparison of insertion-sort correctness proofs in Coq and Idris2, co-authored with Harrison Oates.

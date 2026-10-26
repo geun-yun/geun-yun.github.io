@@ -6,11 +6,14 @@ description:
 nav: true
 nav_order: 3
 ---
+
 {% if site.data.repositories.github_repos %}
 
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+<div class="repositories">
   {% for repo in site.data.repositories.github_repos %}
     {% include repository/repo.liquid repository=repo %}
   {% endfor %}
 </div>
 {% endif %}
+
+<p class="repositories-more"><a href="https://github.com/geun-yun">Browse all repositories on GitHub <span aria-hidden="true">&rarr;</span></a></p>
