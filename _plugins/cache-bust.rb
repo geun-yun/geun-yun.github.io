@@ -43,7 +43,12 @@ module Jekyll
     end
 
     def bust_css_cache(file_name)
-      CacheDigester.new(file_name: file_name, directory: 'assets/_sass').digest!
+      # Hash the actual Sass sources, including the entrypoint. The old
+      # assets/_sass path does not exist and produced the same empty hash
+      # on every build, leaving returning visitors with stale styles.
+      source_files = ['assets/css/main.scss'] + Dir['_sass/**/*.scss'].sort
+      digest = Digest::MD5.hexdigest(source_files.map { |path| File.read(path) }.join)
+      [file_name, '?', digest].join
     end
   end
 end

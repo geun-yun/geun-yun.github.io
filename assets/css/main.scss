@@ -41,11 +41,6 @@ $max-content-width: {{ site.max_width }};
 }
 
 // Repository cards use the site's theme colours and need no remote images.
-.repositories-intro {
-  max-width: 46rem;
-  margin-bottom: 2rem;
-}
-
 .repositories {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -84,15 +79,10 @@ $max-content-width: {{ site.max_width }};
 
   .repository-card-owner {
     margin-top: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     color: var(--global-text-color);
     font-size: 0.8rem;
     overflow-wrap: anywhere;
-  }
-
-  .repository-card-link {
-    align-self: flex-start;
-    font-weight: 500;
   }
 
   a {

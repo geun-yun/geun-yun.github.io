@@ -11,7 +11,4 @@
     <p class="repository-card-description">{{ details.description | escape }}</p>
   {% endif %}
   <p class="repository-card-owner">{{ include.repository | escape }}</p>
-  <a class="repository-card-link" href="https://github.com/{{ include.repository | escape }}">
-    View code<span class="sr-only"> for {{ details.title | default: repo_parts.last | escape }}</span> <span aria-hidden="true">&rarr;</span>
-  </a>
 </article>
