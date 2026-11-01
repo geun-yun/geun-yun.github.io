@@ -9,7 +9,7 @@ profile:
   image: photo_geun.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Canberra, ACT 2601</p>
+    <p>Darlington, NSW 2008</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,7 +27,7 @@ latest_posts:
 
 <u>Bio</u>: Hi all, this is Hyeonggeun Yun, but most of you who know me would know me as Geun, and I prefer to be called by this easier name.  
 
-I was born and lived my early childhood in South Korea, then moved to Australia in 2014 where I have lived in different places, including Gold Coast, Townsville, and Canberra.  
+I was born in South Korea, where I spent my early childhood, before moving to Australia in 2014. Since then, I have lived in several places, including the Gold Coast, Townsville, Canberra, and now Sydney.
 
 At the end of 2025, I completed Bachelor of Advanced Computing (Research and Development) (Honours) at the Australian National University (ANU) under the supervision of [Prof. Hanna Suominen](https://researchportalplus.anu.edu.au/en/persons/hanna-suominen) and [Prof. Amanda Barnard AM](https://comp.anu.edu.au/people/amanda-barnard/). I am currently pursuing a PhD in Computer Science under the supervision of [Dr. Shahadat Uddin](https://profiles.sydney.edu.au/shahadat.uddin) at the University of Sydney (USyd) and working as a teaching assistant at both ANU and USyd.
 
